@@ -116,4 +116,4 @@ _receiver = ['530795037@qq.com']
 if len(desc) < 10:
     print '客票数量正常,无需提醒'
 else:
-    MailSender.sendMail(params['date'] + params['from'] + "到" + params['to'], _receiver, desc)
+    MailSender.sendMail(params['from'] + "到" + params['to'], _receiver, desc)
