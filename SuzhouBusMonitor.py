@@ -79,7 +79,7 @@ def parse(params):
     ticketDesc = ''
     isFirstItem = True
     for i in range(len(ticket) / 5):
-        if int(ticket[5 * i + 4]) < 30:
+        if int(ticket[5 * i + 4]) < 20:
             desc = '{0} {1} 从 {2} 到 {3} 票价 {4} 只剩 {5}'.format(params['drive_date'], ticket[5 * i + 2], ticket[5 * i], ticket[5 * i + 1], ticket[5 * i + 3], ticket[5 * i + 4])
             if isFirstItem:
                 ticketDesc = desc
@@ -92,4 +92,7 @@ desc = parseStation(dates, startStation, params)
 
 _receiver = ['812653775@qq.com', '530795037@qq.com']
 
-MailSender.sendMail(params['from'] + "到" + params['dst_name'], _receiver, desc)
+if len(desc) < 10:
+    print '客票数量正常,无需提醒'
+else:
+    MailSender.sendMail(params['from'] + "到" + params['dst_name'], _receiver, desc)

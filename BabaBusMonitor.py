@@ -100,7 +100,7 @@ def parseSingle(params):
     ticketDesc = ''
     isFirstItem = True
     for i in range(len(ft) / 3):
-        if int(ft[3*i+2]) < 45:
+        if int(ft[3*i+2]) < 20:
             desc = '{0} {1} 票价 {2} 只剩 {3}'.format(params['date'], ft[3*i], ft[3*i+1], ft[3*i+2])
             if isFirstItem:
                 ticketDesc = desc
@@ -113,4 +113,7 @@ desc = parse(dates, params)
 
 _receiver = ['530795037@qq.com']
 
-MailSender.sendMail(params['date'] + params['from'] + "到" + params['to'], _receiver, desc)
+if len(desc) < 10:
+    print '客票数量正常,无需提醒'
+else:
+    MailSender.sendMail(params['date'] + params['from'] + "到" + params['to'], _receiver, desc)
