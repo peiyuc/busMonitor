@@ -90,6 +90,6 @@ def parse(params):
 
 desc = parseStation(dates, startStation, params)
 
-_receiver = ['530795037@qq.com']
+_receiver = ['812653775@qq.com', '530795037@qq.com']
 
 MailSender.sendMail(params['from'] + "到" + params['dst_name'], _receiver, desc)
