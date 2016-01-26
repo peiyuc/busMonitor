@@ -3,11 +3,11 @@
 import smtplib
 from email.mime.text import MIMEText
 
-_sender = 'peiyuc@sina.com'
+_sender = '***'
 _subject = '余票不足'
 _smtpserver = 'smtp.sina.com'
-_username = 'peiyuc@sina.com'
-_password = 'cpy3869552'
+_username = '***'
+_password = '***'
 
 
 def sendMail(subject, receiver,  content):

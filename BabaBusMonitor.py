@@ -111,7 +111,7 @@ def parseSingle(params):
 
 desc = parse(dates, params)
 
-_receiver = ['530795037@qq.com']
+_receiver = ['***']
 
 if len(desc) < 10:
     print '客票数量正常,无需提醒'
